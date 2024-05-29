@@ -10,26 +10,37 @@ When completed, you will have a list of the CRNs and their steady-state equation
 Example:
 
 loadPackage "ReactionNetworks"
+
 loadPackage "ReflexivePolytopesDB" --for matrixFromString();
 
 file = "s2r2G.txt"
+
 directory = "~/PRiME2023/Garcia Puente Research Group/EDD computations"
+
 fn3 = concatenate(directory,"/",file)
+
 get fn3;
 
 codes = apply(lines get fn3, s-> flatten entries matrixFromString s)
+
 edges = for c in codes list(t = drop(c, 2); while #t > 0 list (t_0, t_1) do t = drop(t,2))   
+
 m = (codes_0)_0
+
 n = (codes_0)_1
 
 R = matrix table(n,m, (i,j) -> number(edges_0, e -> e == (j,i+m)) ) 
+
 L = matrix table(n,m, (i,j) -> number(edges_0, e -> e == (i+m,j)) ) 
                             
 R2 = apply (edges, f -> matrix table(n,m, (i,j) -> number(f, e -> e == (j,i+m)) ));
+
 L2 = apply (edges, f -> matrix table(n,m, (i,j) -> number(f, e -> e == (i+m,j)) ));
 
 crnRing = QQ[A, B]
+
 varMatrix = vars crnRing
+
 makeCRN = (m, LHS, RHS) -> (
     myList = apply (m, i -> concatenate(toString((flatten entries LHS_0)_i), " --> ", toString((flatten entries RHS_0)_i)) ); --concatenates and formats the CRNs
     myList2 = apply (m, i -> concatenate separate("[*]", myList_i)); --removes star
@@ -51,8 +62,8 @@ SuperEDD = G ->(
     J = saturate(I+minors((codim I)+1,M),sing);
     print("network:");
     print G;
-    --print("steady-state equations:");
-    --print(steadyStateEquations G);
+    print("steady-state equations:");
+    print(steadyStateEquations G);
     print(concatenate{"dim(J) and EDD: ", toString(dim J, degree J)});
     print(concatenate{"dim(I): ", toString(dim I)});
     print(concatenate{"degree(I): ", toString(degree I)});
@@ -71,6 +82,7 @@ ProblemNetworks = G -> (
   )
 
 for G in Iteration do SuperEDD(G)
-for G in Iteration do ProblemNetworks(G)
+
+for G in Iteration do ProblemNetworks G
 
 
