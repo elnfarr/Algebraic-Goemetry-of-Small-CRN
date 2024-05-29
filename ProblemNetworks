@@ -1,0 +1,14 @@
+#Sometimes CRNs don't behave as we would like, or return not useful values under the other functions.
+#ProblemNetworks tells you which CRNs from a list are "problems". 
+#These problematic CRNs occur when the codimention of the Ideal is infinite.
+
+ProblemNetworks = G -> (                         
+    R=createRing(G,QQ);
+    f=subRandomReactionRates G; 
+    S=QQ[G.ConcentrationRates]; 
+    g=apply(f,p->sub(p,S)); 
+    I=ideal g;
+    if codim I == infinity then print G;
+    if codim I == infinity then print ""
+           
+)
