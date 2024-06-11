@@ -1,12 +1,12 @@
-Associated with the paper "Positive Steady-State Varieties of Small Chemical Reaction Networks" (CRNs for short), the functions in the CRN PSSV file are intended for use in the computation of the positive steady-state varities (PSSVs) of small CRNs. Previously there were no comprehensive and publicly available codes which took a text file, encoding lists of CRNs, and converted them to their CRNs, steady-state polynomials, and steady-state varieties. Computing the PSSV of CRNs is non-trivial (there does not exist an algorithm which can compute it for you), and our functions streamline the process of converting data to readable equations which can be used to find the PSSV of individual CRNs. The text files imported to this code came from https://reaction-networks.net/networks/.
+Associated with the paper "Positive Steady-State Varieties of Small Chemical Reaction Networks" (CRNs for short), the functions in the CRN PSSV file are intended for use in the computation of the positive steady-state varities (PSSVs) of small CRNs. Previously there were no comprehensive and publicly available codes which took a text file encoding lists of CRNs (of the format provided at https://reaction-networks.net/networks/), and converted them to their CRNs, steady-state polynomials, and steady-state varieties. Computing the PSSV of CRNs is non-trivial (there does not exist an algorithm which can compute it for you), and our functions streamline the process of converting data to readable equations which can be used to find the PSSV of individual CRNs.
 
 The file is formatted such that each function is listed in order of when they should be called. This work was done in a mixture of SageMath 10.0 and Macaulay2. Macaulay2 functions require the importation of the ReactionNetworks package, which is noted in the function file.
 
-A full example reading in a text file and computing the steady state varieties and steady state equations is shown below. This includes the funciton definitions as well as the function calls. For further explanations and details, please see the CRN PSSV file.
+A full example reading in a text file and computing the steady state varieties and steady state polynomials is shown below. This includes the funciton definitions as well as the function calls. For further explanations and details, please see the CRN PSSV file.
 
-When completed, you will have a list of the CRNs and their steady-state equations using random (non-zero) fixed reaction rates. With these equations one can then graph their varieties and determine the shape of their PSSVs.
+When completed, you will have a list of the CRNs and their steady-state polynomials using random (non-zero) fixed reaction rates. With these equations one can then graph their varieties and determine the shape of their PSSVs.
 
-We also provide the PSSV information computed using these functions in the 2S2R computational data file.
+We also provide the PSSV information computed using these functions in the 2S2R computational data file, which shows the calculated steady-state and positive steady-state variety for each of the 210 non-isomorphic geniune at-most-bimolecular 2-species 2-reaction networks.
 
 
 Example:
