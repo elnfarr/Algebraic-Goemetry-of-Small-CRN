@@ -1,4 +1,4 @@
-Associated with the paper "Positive Steady-State Varieties of Small Chemical Reaction Networks" (CRNs for short), the functions in the CRN PSSV file are intended for use in the computation of the positive steady-state varities (PSSVs) of small CRNs. Previously there were no comprehensive and publicly available codes which took a text file, encoding lists of CRNs, and converted them to their CRNs, steady-state polynomials, and steady-state varieties. Computing the PSSV of CRNs is non-trivial (there does not exist an algorithm which can compute it for you), and our functions streamline the process of converting data to readable equations which can be used to find the PSSV of individual CRNs. 
+Associated with the paper "Positive Steady-State Varieties of Small Chemical Reaction Networks" (CRNs for short), the functions in the CRN PSSV file are intended for use in the computation of the positive steady-state varities (PSSVs) of small CRNs. Previously there were no comprehensive and publicly available codes which took a text file, encoding lists of CRNs, and converted them to their CRNs, steady-state polynomials, and steady-state varieties. Computing the PSSV of CRNs is non-trivial (there does not exist an algorithm which can compute it for you), and our functions streamline the process of converting data to readable equations which can be used to find the PSSV of individual CRNs. The text files imported to this code came from https://reaction-networks.net/networks/.
 
 The file is formatted such that each function is listed in order of when they should be called. This work was done in a mixture of SageMath 10.0 and Macaulay2. Macaulay2 functions require the importation of the ReactionNetworks package, which is noted in the function file.
 
@@ -72,3 +72,4 @@ for G in Iteration do SuperEDD(G)
 for G in Iteration do ProblemNetworks G
 
 
+We also provide the PSSV information computed using these functions in the 2S2R computational data file.
