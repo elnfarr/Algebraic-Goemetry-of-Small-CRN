@@ -6,6 +6,8 @@ A full example reading in a text file and computing the steady state varieties a
 
 When completed, you will have a list of the CRNs and their steady-state equations using random (non-zero) fixed reaction rates. With these equations one can then graph their varieties and determine the shape of their PSSVs.
 
+We also provide the PSSV information computed using these functions in the 2S2R computational data file.
+
 
 Example:
 
@@ -70,6 +72,3 @@ ProblemNetworks = G -> (
 for G in Iteration do SuperEDD(G)
 
 for G in Iteration do ProblemNetworks G
-
-
-We also provide the PSSV information computed using these functions in the 2S2R computational data file.
