@@ -6,7 +6,7 @@ A full example reading in a text file and computing the steady state varieties a
 
 When completed, you will have a list of the CRNs and their steady-state polynomials using random (non-zero) fixed reaction rates. With these equations one can then graph their varieties and determine the shape of their PSSVs.
 
-We also provide the PSSV information computed using these functions in the 2S2R computational data file, which shows the calculated steady-state and positive steady-state variety for each of the 210 non-isomorphic geniune at-most-bimolecular 2-species 2-reaction networks. 
+We also provide the PSSV information computed using these functions in the 2S2R computational data file, which shows the calculated steady-state and positive steady-state variety for each of the 210 non-isomorphic geniune at-most-bimolecular 2-species 2-reaction networks. The networks with nonempty positive steady-state varieties are the first eighteen entries, and the network with a rate-dependent positive steady-state variety is network number 204.
 
 Finally, we give an explanation of how to directly understand the text files from sequences of numbers into their corresponding networks in the Manual Translation file.
 
